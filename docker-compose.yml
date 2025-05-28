@@ -1,33 +1,35 @@
-version: '3.8'
-
 services:
   # MongoDB service
   mongodb:
     image: mongo:5.0
     container_name: protocol-bridge-mongodb
-    restart: always
+    restart: unless-stopped
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
     environment:
       - MONGO_INITDB_DATABASE=protocol-bridge
+    networks:
+      - protocol-bridge-network
 
   # Redis service (for production caching)
   redis:
     image: redis:alpine
     container_name: protocol-bridge-redis
-    restart: always
+    restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:
       - redis_data:/data
+    networks:
+      - protocol-bridge-network
 
   # Keycloak service for SAML/OIDC
   keycloak:
-    image: quay.io/keycloak/keycloak:20.0.3
+    image: quay.io/keycloak/keycloak:26.2.1
     container_name: protocol-bridge-keycloak
-    restart: always
+    restart: unless-stopped
     ports:
       - "8080:8080"
     environment:
@@ -35,9 +37,18 @@ services:
       - KEYCLOAK_ADMIN_PASSWORD=admin
       - KC_HEALTH_ENABLED=true
       - KC_METRICS_ENABLED=true
+      - KC_HTTP_RELATIVE_PATH=/auth
     command: start-dev
     volumes:
       - keycloak_data:/opt/keycloak/data
+    networks:
+      - protocol-bridge-network
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8080/auth/health/ready || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
 
   # Protocol Bridge Server
   server:
@@ -45,17 +56,20 @@ services:
       context: ./server
       dockerfile: Dockerfile
     container_name: protocol-bridge-server
-    restart: always
+    restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5002:5000"
     depends_on:
-      - mongodb
-      - redis
-      - keycloak
+      mongodb:
+        condition: service_started
+      redis:
+        condition: service_started
+      keycloak:
+        condition: service_healthy
     environment:
       - NODE_ENV=development
       - PORT=5000
-      - SERVER_BASE_URL=http://localhost:5000
+      - SERVER_BASE_URL=http://localhost:5002
       - MONGODB_URI=mongodb://mongodb:27017/protocol-bridge
       - REDIS_URI=redis://redis:6379
       - JWT_SECRET=your-development-jwt-secret-change-in-production
@@ -64,31 +78,48 @@ services:
       - KEYCLOAK_CLIENT_ID=protocol-bridge-client
       - SAML_ENTRY_POINT=http://keycloak:8080/auth/realms/master/protocol/saml
       - SAML_ISSUER=protocol-bridge-saml
-      - SAML_CALLBACK_URL=http://localhost:5000/api/auth/saml/callback
-      - CORS_ORIGIN=http://localhost:3000
+      - SAML_CALLBACK_URL=http://localhost:5002/api/auth/saml/callback
+      - CORS_ORIGIN=http://localhost:5173
       - SESSION_SECRET=your-development-session-secret-change-in-production
-    volumes:
-      - ./server:/app
-      - /app/node_modules
+    networks:
+      - protocol-bridge-network
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:5000/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   # Protocol Bridge Client
   client:
     build:
-      context: ./client
+      context: ./client1
       dockerfile: Dockerfile
     container_name: protocol-bridge-client
-    restart: always
+    restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "5173:5173"
     depends_on:
-      - server
+      server:
+        condition: service_healthy
     environment:
-      - REACT_APP_API_URL=http://localhost:5000/api
+      - VITE_API_URL=http://localhost:5002/api
+      - VITE_SERVER_URL=http://localhost:5002
+    networks:
+      - protocol-bridge-network
+    # For development with hot reload (optional)
     volumes:
-      - ./client:/app
-      - /app/node_modules
+      - ./client1/src:/app/src:ro
+      - ./client1/public:/app/public:ro
 
 volumes:
   mongodb_data:
+    driver: local
   redis_data:
+    driver: local
   keycloak_data:
+    driver: local
+
+networks:
+  protocol-bridge-network:
+    driver: bridge
