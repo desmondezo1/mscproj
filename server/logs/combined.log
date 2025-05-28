@@ -1,0 +1,1959 @@
+2025-05-18 13:18:42:1842 info: Created identity mapping for traditionalId test5@g.com with provider(s) email 
+2025-05-18 13:18:42:1842 info: User registration completed {
+  "method": "email",
+  "userId": "test5@g.com",
+  "email": "test5@g.com",
+  "duration": "223.64ms"
+}
+2025-05-18 13:18:42:1842 info: ::1 - - [18/May/2025:12:18:42 +0000] "POST /api/auth/email/register HTTP/1.1" 201 168 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:18:59:1859 info: Authentication completed {
+  "method": "email",
+  "userId": "test5@g.com",
+  "email": "test5@g.com",
+  "duration": "109.83ms",
+  "hasDid": false,
+  "migrationPhase": "traditional"
+}
+2025-05-18 13:18:59:1859 info: ::1 - - [18/May/2025:12:18:59 +0000] "POST /api/auth/email HTTP/1.1" 200 541 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:18:59:1859 info: Looking up identity mapping for traditionalId: test5@g.com, providers: email 
+2025-05-18 13:18:59:1859 info: Found identity mapping by exact match for user test5@g.com 
+2025-05-18 13:18:59:1859 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "email",
+  "duration": "38.45ms",
+  "foundByDid": true
+}
+2025-05-18 13:18:59:1859 info: ::1 - - [18/May/2025:12:18:59 +0000] "GET /api/auth/user HTTP/1.1" 200 147 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:18:59:1859 info: Looking up identity mapping for traditionalId: test5@g.com, providers: email 
+2025-05-18 13:19:00:190 info: Found identity mapping by exact match for user test5@g.com 
+2025-05-18 13:19:00:190 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "email",
+  "duration": "37.26ms",
+  "foundByDid": true
+}
+2025-05-18 13:19:00:190 info: ::1 - - [18/May/2025:12:19:00 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:19:14:1914 info: Starting SAML authentication flow 
+2025-05-18 13:19:14:1914 info: ::1 - - [18/May/2025:12:19:14 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:19:23:1923 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-18 13:19:23:1923 info: SAML authentication profile received: {
+  "nameID": "test5@g.com",
+  "email": "test5@g.com"
+}
+2025-05-18 13:19:23:1923 info: Processing authenticated SAML user: {
+  "id": "test5@g.com",
+  "email": "test5@g.com"
+}
+2025-05-18 13:19:23:1923 info: Processing SAML authentication for user test5@g.com 
+2025-05-18 13:19:23:1923 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test5@g.com",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "test5@g.com",
+    "firstName": "test5@g.com",
+    "lastName": "test5@g.com",
+    "displayName": "test5@g.com test5@g.com",
+    "roles": []
+  },
+  "email": "test5@g.com",
+  "firstName": "test5@g.com",
+  "lastName": "test5@g.com",
+  "displayName": "test5@g.com test5@g.com",
+  "roles": [],
+  "authTime": "2025-05-18T12:19:23.546Z"
+}
+2025-05-18 13:19:23:1923 info: Looking up identity mapping for traditionalId: test5@g.com, providers: saml 
+2025-05-18 13:19:23:1923 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:19:23:1923 warn: Found mapping by traditionalId, but provider "saml" is unrelated to existing providers: email 
+2025-05-18 13:19:23:1923 info: Added provider "saml" to existing mapping for test5@g.com 
+2025-05-18 13:19:23:1923 info: SAML authentication processed for user test5@g.com, migration phase: traditional 
+2025-05-18 13:19:23:1923 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test5@g.com",
+  "email": "test5@g.com",
+  "duration": "114.59ms",
+  "migrationPhase": "traditional",
+  "hasDid": false,
+  "walletConnected": false
+}
+2025-05-18 13:19:23:1923 info: ::1 - - [18/May/2025:12:19:23 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 600 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:19:24:1924 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:19:24:1924 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:19:24:1924 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:19:24:1924 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "72.38ms",
+  "foundByDid": true
+}
+2025-05-18 13:19:24:1924 info: ::1 - - [18/May/2025:12:19:24 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:21:37:2137 info: Creating DID for user test5@g.com with method: sui {
+  "hasDid": true,
+  "hasDidDocument": true,
+  "hasWalletAddress": true,
+  "isRegisteredOnChain": true,
+  "provider": "protocol-bridge-saml"
+}
+2025-05-18 13:21:37:2137 info: [DID Service] Starting DID creation process for user test5@g.com with method sui 
+2025-05-18 13:21:37:2137 info: [DID Service] Using pre-created DID did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 for user test5@g.com 
+2025-05-18 13:21:37:2137 info: [DID Service] DID did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 is registered on blockchain with transaction: 7Kti3xFA2GLsoprLVZKwPJX4MRwvaeTLJApkYEbtmn5W 
+2025-05-18 13:21:37:2137 info: [DID Service] Blockchain registration details: {
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "transactionDigest": "7Kti3xFA2GLsoprLVZKwPJX4MRwvaeTLJApkYEbtmn5W",
+  "walletAddress": "0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051"
+}
+2025-05-18 13:21:37:2137 info: [DID Service] Successfully associated pre-created DID did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 with user test5@g.com 
+2025-05-18 13:21:37:2137 info: [DID Service] DID creation process completed in 0.74ms {
+  "userId": "test5@g.com",
+  "method": "sui",
+  "duration": 0.739414,
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "type": "pre_created",
+  "isRegisteredOnChain": true
+}
+2025-05-18 13:21:37:2137 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:21:37:2137 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:21:37:2137 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:21:37:2137 info: Added DID did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 to identity mapping for user test5@g.com 
+2025-05-18 13:21:37:2137 info: DID creation completed {
+  "userId": "test5@g.com",
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "duration": "158.33ms",
+  "migrationPhase": "preparation"
+}
+2025-05-18 13:21:37:2137 info: ::1 - - [18/May/2025:12:21:37 +0000] "POST /api/did HTTP/1.1" 200 1475 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:21:37:2137 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:21:37:2137 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:21:37:2137 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:21:37:2137 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "69.66ms",
+  "foundByDid": false
+}
+2025-05-18 13:21:37:2137 info: ::1 - - [18/May/2025:12:21:37 +0000] "GET /api/auth/user HTTP/1.1" 200 230 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Starting wallet connection process for user test5@g.com 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Starting wallet connection process for user test5@g.com 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Using existing DID did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 for user test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Creating wallet connection invitation for user test5@g.com 
+2025-05-18 13:22:10:2210 info: Creating connection invitation for user test5@g.com 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Using existing DID did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 for user test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Creating wallet connection invitation for user test5@g.com 
+2025-05-18 13:22:10:2210 info: Creating connection invitation for user test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Created wallet connection invitation with ID 42fdeac7-fc0e-4d0b-b397-c800f5303440 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Created wallet connection invitation with ID 3ac184d8-e28c-45cc-b3be-2f05df1f7894 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: Connected wallet for user test5@g.com with connection ID 3ac184d8-e28c-45cc-b3be-2f05df1f7894 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 3ac184d8-e28c-45cc-b3be-2f05df1f7894 
+2025-05-18 13:22:10:2210 info: Updating mapping for traditionalId: test5@g.com, provider(s): protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: Connected wallet for user test5@g.com with connection ID 42fdeac7-fc0e-4d0b-b397-c800f5303440 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 42fdeac7-fc0e-4d0b-b397-c800f5303440 
+2025-05-18 13:22:10:2210 info: Updating mapping for traditionalId: test5@g.com, provider(s): protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: Updated identity mapping for traditionalId test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Successfully completed wallet connection process for user test5@g.com {
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "connectionId": "3ac184d8-e28c-45cc-b3be-2f05df1f7894",
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:22:10:2210 info: Wallet connection initiated {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "329.38ms",
+  "connectionId": "3ac184d8-e28c-45cc-b3be-2f05df1f7894"
+}
+2025-05-18 13:22:10:2210 info: ::1 - - [18/May/2025:12:22:10 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1460 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:22:10:2210 info: Updated identity mapping for traditionalId test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test5@g.com 
+2025-05-18 13:22:10:2210 info: [Protocol Bridge] Successfully completed wallet connection process for user test5@g.com {
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "connectionId": "42fdeac7-fc0e-4d0b-b397-c800f5303440",
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:22:10:2210 info: Wallet connection initiated {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "342.16ms",
+  "connectionId": "42fdeac7-fc0e-4d0b-b397-c800f5303440"
+}
+2025-05-18 13:22:10:2210 info: ::1 - - [18/May/2025:12:22:10 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1460 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "71.73ms",
+  "foundByDid": false
+}
+2025-05-18 13:22:10:2210 info: ::1 - - [18/May/2025:12:22:10 +0000] "GET /api/auth/user HTTP/1.1" 200 224 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:10:2210 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:10:2210 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "72.00ms",
+  "foundByDid": false
+}
+2025-05-18 13:22:10:2210 info: ::1 - - [18/May/2025:12:22:10 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:22:10:2210 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:10:2210 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:11:2211 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:11:2211 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "71.27ms",
+  "foundByDid": false
+}
+2025-05-18 13:22:11:2211 info: ::1 - - [18/May/2025:12:22:11 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:22:11:2211 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:22:11:2211 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:22:11:2211 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:22:11:2211 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "113.84ms",
+  "foundByDid": false
+}
+2025-05-18 13:22:11:2211 info: ::1 - - [18/May/2025:12:22:11 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:08:238 info: ::1 - - [18/May/2025:12:23:08 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:08:238 info: ::1 - - [18/May/2025:12:23:08 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:08:238 info: ::1 - - [18/May/2025:12:23:08 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:08:238 info: ::1 - - [18/May/2025:12:23:08 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:29:2329 info: Starting SAML authentication flow 
+2025-05-18 13:23:29:2329 info: ::1 - - [18/May/2025:12:23:29 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:30:2330 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-18 13:23:30:2330 info: SAML authentication profile received: {
+  "nameID": "test5@g.com",
+  "email": "test5@g.com"
+}
+2025-05-18 13:23:30:2330 info: Processing authenticated SAML user: {
+  "id": "test5@g.com",
+  "email": "test5@g.com"
+}
+2025-05-18 13:23:30:2330 info: Processing SAML authentication for user test5@g.com 
+2025-05-18 13:23:30:2330 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test5@g.com",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "test5@g.com",
+    "firstName": "test5@g.com",
+    "lastName": "test5@g.com",
+    "displayName": "test5@g.com test5@g.com",
+    "roles": []
+  },
+  "email": "test5@g.com",
+  "firstName": "test5@g.com",
+  "lastName": "test5@g.com",
+  "displayName": "test5@g.com test5@g.com",
+  "roles": [],
+  "authTime": "2025-05-18T12:23:30.716Z"
+}
+2025-05-18 13:23:30:2330 info: Looking up identity mapping for traditionalId: test5@g.com, providers: saml 
+2025-05-18 13:23:30:2330 info: Found identity mapping by exact match for user test5@g.com 
+2025-05-18 13:23:30:2330 info: SAML authentication processed for user test5@g.com, migration phase: hybrid 
+2025-05-18 13:23:30:2330 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test5@g.com",
+  "email": "test5@g.com",
+  "duration": "58.12ms",
+  "migrationPhase": "hybrid",
+  "hasDid": true,
+  "walletConnected": true
+}
+2025-05-18 13:23:30:2330 info: ::1 - - [18/May/2025:12:23:30 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 698 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:31:2331 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:23:31:2331 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:23:31:2331 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:23:31:2331 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "duration": "114.03ms",
+  "foundByDid": true
+}
+2025-05-18 13:23:31:2331 info: ::1 - - [18/May/2025:12:23:31 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:33:2333 info: ::1 - - [18/May/2025:12:23:33 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:33:2333 info: ::1 - - [18/May/2025:12:23:33 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:34:2334 info: ::1 - - [18/May/2025:12:23:34 +0000] "GET /api/credentials HTTP/1.1" 200 2 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:34:2334 info: ::1 - - [18/May/2025:12:23:34 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:52:2352 info: Issuing IdentityCredential credential for user test5@g.com 
+2025-05-18 13:23:52:2352 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:23:52:2352 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:23:52:2352 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:23:52:2352 info: Creating IdentityCredential credential for subject did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 
+2025-05-18 13:23:52:2352 info: Credential issued and stored for user test5@g.com 
+2025-05-18 13:23:52:2352 info: Credential issuance initiated {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "credentialType": "IdentityCredential",
+  "duration": "121.30ms"
+}
+2025-05-18 13:23:52:2352 info: ::1 - - [18/May/2025:12:23:52 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1218 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:23:52:2352 info: ::1 - - [18/May/2025:12:23:52 +0000] "GET /api/credentials HTTP/1.1" 200 1122 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:24:04:244 info: Issuing EmailCredential credential for user test5@g.com 
+2025-05-18 13:24:04:244 info: Looking up identity mapping for traditionalId: test5@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:24:04:244 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:24:04:244 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:24:04:244 info: Creating EmailCredential credential for subject did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051 
+2025-05-18 13:24:04:244 info: Credential issued and stored for user test5@g.com 
+2025-05-18 13:24:04:244 info: Credential issuance initiated {
+  "userId": "test5@g.com",
+  "provider": "protocol-bridge-saml",
+  "credentialType": "EmailCredential",
+  "duration": "110.79ms"
+}
+2025-05-18 13:24:04:244 info: ::1 - - [18/May/2025:12:24:04 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1268 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:24:04:244 info: ::1 - - [18/May/2025:12:24:04 +0000] "GET /api/credentials HTTP/1.1" 200 2296 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:24:34:2434 info: Processing VC authentication {
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "issuer": "did:example:ffaefc41-841c-4c61-b5c3-81d8c930f5f4",
+  "email": "test5@g.com"
+}
+2025-05-18 13:24:34:2434 info: Found existing user mapping {
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "traditionalId": "test5@g.com",
+  "email": "test5@g.com"
+}
+2025-05-18 13:24:34:2434 info: VC authentication completed - existing user {
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "email": "test5@g.com",
+  "duration": "37.65ms",
+  "migrationPhase": "hybrid",
+  "walletConnected": true,
+  "isFirstLogin": false,
+  "transitionToFullSSI": false
+}
+2025-05-18 13:24:34:2434 info: ::1 - - [18/May/2025:12:24:34 +0000] "POST /api/bridge/roundtrip HTTP/1.1" 200 723 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:24:34:2434 info: Looking up identity mapping for traditionalId: test5@g.com, providers: vc 
+2025-05-18 13:24:34:2434 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:24:34:2434 warn: Found mapping by traditionalId, but provider "vc" is unrelated to existing providers: email, saml 
+2025-05-18 13:24:34:2434 info: Added provider "vc" to existing mapping for test5@g.com 
+2025-05-18 13:24:34:2434 info: User info retrieved {
+  "userId": "test5@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x8a71903be1af29a1d12aeda43cb7aaa3faf12f16ad26f0be2a0580074619f051",
+  "duration": "110.45ms",
+  "foundByDid": true
+}
+2025-05-18 13:24:34:2434 info: ::1 - - [18/May/2025:12:24:34 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:25:02:252 info: ::1 - - [18/May/2025:12:25:02 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:25:02:252 info: ::1 - - [18/May/2025:12:25:02 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:25:02:252 info: ::1 - - [18/May/2025:12:25:02 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:25:02:252 info: ::1 - - [18/May/2025:12:25:02 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:27:33:2733 info: Created identity mapping for traditionalId test6@g.com with provider(s) email 
+2025-05-18 13:27:33:2733 info: User registration completed {
+  "method": "email",
+  "userId": "test6@g.com",
+  "email": "test6@g.com",
+  "duration": "184.42ms"
+}
+2025-05-18 13:27:33:2733 info: ::1 - - [18/May/2025:12:27:33 +0000] "POST /api/auth/email/register HTTP/1.1" 201 168 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:27:44:2744 info: Authentication completed {
+  "method": "email",
+  "userId": "test6@g.com",
+  "email": "test6@g.com",
+  "duration": "117.59ms",
+  "hasDid": false,
+  "migrationPhase": "traditional"
+}
+2025-05-18 13:27:44:2744 info: ::1 - - [18/May/2025:12:27:44 +0000] "POST /api/auth/email HTTP/1.1" 200 541 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:27:45:2745 info: Looking up identity mapping for traditionalId: test6@g.com, providers: email 
+2025-05-18 13:27:45:2745 info: Found identity mapping by exact match for user test6@g.com 
+2025-05-18 13:27:45:2745 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "email",
+  "duration": "35.93ms",
+  "foundByDid": true
+}
+2025-05-18 13:27:45:2745 info: ::1 - - [18/May/2025:12:27:45 +0000] "GET /api/auth/user HTTP/1.1" 200 147 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:27:45:2745 info: Looking up identity mapping for traditionalId: test6@g.com, providers: email 
+2025-05-18 13:27:45:2745 info: Found identity mapping by exact match for user test6@g.com 
+2025-05-18 13:27:45:2745 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "email",
+  "duration": "35.19ms",
+  "foundByDid": true
+}
+2025-05-18 13:29:09:299 info: Starting SAML authentication flow 
+2025-05-18 13:29:09:299 info: ::1 - - [18/May/2025:12:29:09 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:29:19:2919 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-18 13:29:19:2919 info: SAML authentication profile received: {
+  "nameID": "test6@g.com",
+  "email": "test6@g.com"
+}
+2025-05-18 13:29:19:2919 info: Processing authenticated SAML user: {
+  "id": "test6@g.com",
+  "email": "test6@g.com"
+}
+2025-05-18 13:29:19:2919 info: Processing SAML authentication for user test6@g.com 
+2025-05-18 13:29:19:2919 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test6@g.com",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "test6@g.com",
+    "firstName": "test6@g.com",
+    "lastName": "test6@g.com",
+    "displayName": "test6@g.com test6@g.com",
+    "roles": []
+  },
+  "email": "test6@g.com",
+  "firstName": "test6@g.com",
+  "lastName": "test6@g.com",
+  "displayName": "test6@g.com test6@g.com",
+  "roles": [],
+  "authTime": "2025-05-18T12:29:19.385Z"
+}
+2025-05-18 13:29:19:2919 info: Looking up identity mapping for traditionalId: test6@g.com, providers: saml 
+2025-05-18 13:29:19:2919 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:29:19:2919 warn: Found mapping by traditionalId, but provider "saml" is unrelated to existing providers: email 
+2025-05-18 13:29:19:2919 info: Added provider "saml" to existing mapping for test6@g.com 
+2025-05-18 13:29:19:2919 info: SAML authentication processed for user test6@g.com, migration phase: traditional 
+2025-05-18 13:29:19:2919 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test6@g.com",
+  "email": "test6@g.com",
+  "duration": "116.64ms",
+  "migrationPhase": "traditional",
+  "hasDid": false,
+  "walletConnected": false
+}
+2025-05-18 13:29:19:2919 info: ::1 - - [18/May/2025:12:29:19 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 600 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:29:20:2920 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:29:20:2920 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:29:20:2920 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:29:20:2920 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "89.03ms",
+  "foundByDid": true
+}
+2025-05-18 13:29:20:2920 info: ::1 - - [18/May/2025:12:29:20 +0000] "GET /api/auth/user HTTP/1.1" 200 147 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:30:36:3036 info: Creating DID for user test6@g.com with method: sui {
+  "hasDid": true,
+  "hasDidDocument": true,
+  "hasWalletAddress": true,
+  "isRegisteredOnChain": true,
+  "provider": "protocol-bridge-saml"
+}
+2025-05-18 13:30:36:3036 info: [DID Service] Starting DID creation process for user test6@g.com with method sui 
+2025-05-18 13:30:36:3036 info: [DID Service] Using pre-created DID did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 for user test6@g.com 
+2025-05-18 13:30:36:3036 info: [DID Service] DID did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 is registered on blockchain with transaction: 42psHoaGeCGH9WktLPMz8122QTaSzCcPBcNLpcMUZuvt 
+2025-05-18 13:30:36:3036 info: [DID Service] Blockchain registration details: {
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "transactionDigest": "42psHoaGeCGH9WktLPMz8122QTaSzCcPBcNLpcMUZuvt",
+  "walletAddress": "0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9"
+}
+2025-05-18 13:30:36:3036 info: [DID Service] Successfully associated pre-created DID did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 with user test6@g.com 
+2025-05-18 13:30:36:3036 info: [DID Service] DID creation process completed in 0.79ms {
+  "userId": "test6@g.com",
+  "method": "sui",
+  "duration": 0.794729,
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "type": "pre_created",
+  "isRegisteredOnChain": true
+}
+2025-05-18 13:30:36:3036 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:30:36:3036 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:30:36:3036 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:30:36:3036 info: Added DID did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 to identity mapping for user test6@g.com 
+2025-05-18 13:30:36:3036 info: DID creation completed {
+  "userId": "test6@g.com",
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "duration": "157.98ms",
+  "migrationPhase": "preparation"
+}
+2025-05-18 13:30:36:3036 info: ::1 - - [18/May/2025:12:30:36 +0000] "POST /api/did HTTP/1.1" 200 1475 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:30:36:3036 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:30:36:3036 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:30:36:3036 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:30:36:3036 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "88.37ms",
+  "foundByDid": false
+}
+2025-05-18 13:30:36:3036 info: ::1 - - [18/May/2025:12:30:36 +0000] "GET /api/auth/user HTTP/1.1" 200 230 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Starting wallet connection process for user test6@g.com 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Starting wallet connection process for user test6@g.com 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Using existing DID did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 for user test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Creating wallet connection invitation for user test6@g.com 
+2025-05-18 13:31:02:312 info: Creating connection invitation for user test6@g.com 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Using existing DID did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 for user test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Creating wallet connection invitation for user test6@g.com 
+2025-05-18 13:31:02:312 info: Creating connection invitation for user test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Created wallet connection invitation with ID 46ab8b5f-b0c7-42a6-b057-919909d68b14 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Created wallet connection invitation with ID 761245f1-d12e-492f-873c-175e9c94af19 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: Connected wallet for user test6@g.com with connection ID 761245f1-d12e-492f-873c-175e9c94af19 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 761245f1-d12e-492f-873c-175e9c94af19 
+2025-05-18 13:31:02:312 info: Updating mapping for traditionalId: test6@g.com, provider(s): protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: Connected wallet for user test6@g.com with connection ID 46ab8b5f-b0c7-42a6-b057-919909d68b14 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 46ab8b5f-b0c7-42a6-b057-919909d68b14 
+2025-05-18 13:31:02:312 info: Updating mapping for traditionalId: test6@g.com, provider(s): protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: Updated identity mapping for traditionalId test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Successfully completed wallet connection process for user test6@g.com {
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "connectionId": "761245f1-d12e-492f-873c-175e9c94af19",
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:31:02:312 info: Wallet connection initiated {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "317.02ms",
+  "connectionId": "761245f1-d12e-492f-873c-175e9c94af19"
+}
+2025-05-18 13:31:02:312 info: ::1 - - [18/May/2025:12:31:02 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1460 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: Updated identity mapping for traditionalId test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test6@g.com 
+2025-05-18 13:31:02:312 info: [Protocol Bridge] Successfully completed wallet connection process for user test6@g.com {
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "connectionId": "46ab8b5f-b0c7-42a6-b057-919909d68b14",
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:31:02:312 info: Wallet connection initiated {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "328.12ms",
+  "connectionId": "46ab8b5f-b0c7-42a6-b057-919909d68b14"
+}
+2025-05-18 13:31:02:312 info: ::1 - - [18/May/2025:12:31:02 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1460 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "69.11ms",
+  "foundByDid": false
+}
+2025-05-18 13:31:02:312 info: ::1 - - [18/May/2025:12:31:02 +0000] "GET /api/auth/user HTTP/1.1" 200 224 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:02:312 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:02:312 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:02:312 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "66.82ms",
+  "foundByDid": false
+}
+2025-05-18 13:31:02:312 info: ::1 - - [18/May/2025:12:31:02 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:02:312 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:03:313 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:03:313 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:03:313 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "68.33ms",
+  "foundByDid": false
+}
+2025-05-18 13:31:03:313 info: ::1 - - [18/May/2025:12:31:03 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:03:313 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:03:313 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:03:313 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:03:313 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "67.91ms",
+  "foundByDid": false
+}
+2025-05-18 13:31:03:313 info: ::1 - - [18/May/2025:12:31:03 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:12:3112 info: ::1 - - [18/May/2025:12:31:12 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:12:3112 info: ::1 - - [18/May/2025:12:31:12 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:12:3112 info: ::1 - - [18/May/2025:12:31:12 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:12:3112 info: ::1 - - [18/May/2025:12:31:12 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:32:3132 info: Starting SAML authentication flow 
+2025-05-18 13:31:32:3132 info: ::1 - - [18/May/2025:12:31:32 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:33:3133 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-18 13:31:33:3133 info: SAML authentication profile received: {
+  "nameID": "test6@g.com",
+  "email": "test6@g.com"
+}
+2025-05-18 13:31:33:3133 info: Processing authenticated SAML user: {
+  "id": "test6@g.com",
+  "email": "test6@g.com"
+}
+2025-05-18 13:31:33:3133 info: Processing SAML authentication for user test6@g.com 
+2025-05-18 13:31:33:3133 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test6@g.com",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "test6@g.com",
+    "firstName": "test6@g.com",
+    "lastName": "test6@g.com",
+    "displayName": "test6@g.com test6@g.com",
+    "roles": []
+  },
+  "email": "test6@g.com",
+  "firstName": "test6@g.com",
+  "lastName": "test6@g.com",
+  "displayName": "test6@g.com test6@g.com",
+  "roles": [],
+  "authTime": "2025-05-18T12:31:33.964Z"
+}
+2025-05-18 13:31:33:3133 info: Looking up identity mapping for traditionalId: test6@g.com, providers: saml 
+2025-05-18 13:31:34:3134 info: Found identity mapping by exact match for user test6@g.com 
+2025-05-18 13:31:34:3134 info: SAML authentication processed for user test6@g.com, migration phase: hybrid 
+2025-05-18 13:31:34:3134 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test6@g.com",
+  "email": "test6@g.com",
+  "duration": "41.30ms",
+  "migrationPhase": "hybrid",
+  "hasDid": true,
+  "walletConnected": true
+}
+2025-05-18 13:31:34:3134 info: ::1 - - [18/May/2025:12:31:34 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 698 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:34:3134 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:34:3134 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:34:3134 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:34:3134 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "duration": "93.83ms",
+  "foundByDid": true
+}
+2025-05-18 13:31:34:3134 info: ::1 - - [18/May/2025:12:31:34 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:36:3136 info: ::1 - - [18/May/2025:12:31:36 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:36:3136 info: ::1 - - [18/May/2025:12:31:36 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:36:3136 info: ::1 - - [18/May/2025:12:31:36 +0000] "GET /api/credentials HTTP/1.1" 200 2 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:36:3136 info: ::1 - - [18/May/2025:12:31:36 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:47:3147 info: Issuing EmailCredential credential for user test6@g.com 
+2025-05-18 13:31:47:3147 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:47:3147 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:47:3147 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:47:3147 info: Creating EmailCredential credential for subject did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 
+2025-05-18 13:31:48:3148 info: Credential issued and stored for user test6@g.com 
+2025-05-18 13:31:48:3148 info: Credential issuance initiated {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "credentialType": "EmailCredential",
+  "duration": "111.13ms"
+}
+2025-05-18 13:31:48:3148 info: ::1 - - [18/May/2025:12:31:48 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1268 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:48:3148 info: ::1 - - [18/May/2025:12:31:48 +0000] "GET /api/credentials HTTP/1.1" 200 1175 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:54:3154 info: Issuing IdentityCredential credential for user test6@g.com 
+2025-05-18 13:31:54:3154 info: Looking up identity mapping for traditionalId: test6@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:31:54:3154 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:31:54:3154 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:31:54:3154 info: Creating IdentityCredential credential for subject did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9 
+2025-05-18 13:31:54:3154 info: Credential issued and stored for user test6@g.com 
+2025-05-18 13:31:54:3154 info: Credential issuance initiated {
+  "userId": "test6@g.com",
+  "provider": "protocol-bridge-saml",
+  "credentialType": "IdentityCredential",
+  "duration": "111.42ms"
+}
+2025-05-18 13:31:54:3154 info: ::1 - - [18/May/2025:12:31:54 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1218 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:31:54:3154 info: ::1 - - [18/May/2025:12:31:54 +0000] "GET /api/credentials HTTP/1.1" 200 2296 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:32:04:324 info: ::1 - - [18/May/2025:12:32:04 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:32:04:324 info: ::1 - - [18/May/2025:12:32:04 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:32:04:324 info: ::1 - - [18/May/2025:12:32:04 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:32:04:324 info: ::1 - - [18/May/2025:12:32:04 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:35:38:3538 info: Processing VC authentication {
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "issuer": "did:example:ffaefc41-841c-4c61-b5c3-81d8c930f5f4",
+  "email": "test6@g.com"
+}
+2025-05-18 13:35:38:3538 info: Found existing user mapping {
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "traditionalId": "test6@g.com",
+  "email": "test6@g.com"
+}
+2025-05-18 13:35:38:3538 info: VC authentication completed - existing user {
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "email": "test6@g.com",
+  "duration": "36.16ms",
+  "migrationPhase": "hybrid",
+  "walletConnected": true,
+  "isFirstLogin": false,
+  "transitionToFullSSI": false
+}
+2025-05-18 13:35:38:3538 info: ::1 - - [18/May/2025:12:35:38 +0000] "POST /api/bridge/roundtrip HTTP/1.1" 200 723 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:35:38:3538 info: Looking up identity mapping for traditionalId: test6@g.com, providers: vc 
+2025-05-18 13:35:38:3538 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:35:38:3538 warn: Found mapping by traditionalId, but provider "vc" is unrelated to existing providers: email, saml 
+2025-05-18 13:35:38:3538 info: Added provider "vc" to existing mapping for test6@g.com 
+2025-05-18 13:35:38:3538 info: User info retrieved {
+  "userId": "test6@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x53db8b384b431040330e27cca24e3855a6dfd42e198ab77229b701bec816bdb9",
+  "duration": "112.73ms",
+  "foundByDid": true
+}
+2025-05-18 13:35:38:3538 info: ::1 - - [18/May/2025:12:35:38 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:35:59:3559 info: ::1 - - [18/May/2025:12:35:59 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:35:59:3559 info: ::1 - - [18/May/2025:12:35:59 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:35:59:3559 info: ::1 - - [18/May/2025:12:35:59 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:35:59:3559 info: ::1 - - [18/May/2025:12:35:59 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:37:59:3759 info: Created identity mapping for traditionalId test7@g.com with provider(s) email 
+2025-05-18 13:37:59:3759 info: User registration completed {
+  "method": "email",
+  "userId": "test7@g.com",
+  "email": "test7@g.com",
+  "duration": "184.75ms"
+}
+2025-05-18 13:37:59:3759 info: ::1 - - [18/May/2025:12:37:59 +0000] "POST /api/auth/email/register HTTP/1.1" 201 168 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:38:04:384 info: Authentication completed {
+  "method": "email",
+  "userId": "test7@g.com",
+  "email": "test7@g.com",
+  "duration": "112.92ms",
+  "hasDid": false,
+  "migrationPhase": "traditional"
+}
+2025-05-18 13:38:04:384 info: ::1 - - [18/May/2025:12:38:04 +0000] "POST /api/auth/email HTTP/1.1" 200 541 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:38:05:385 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-18 13:38:05:385 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 13:38:05:385 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "duration": "37.95ms",
+  "foundByDid": true
+}
+2025-05-18 13:38:05:385 info: ::1 - - [18/May/2025:12:38:05 +0000] "GET /api/auth/user HTTP/1.1" 200 147 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:38:05:385 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-18 13:38:05:385 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 13:38:05:385 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "duration": "34.72ms",
+  "foundByDid": true
+}
+2025-05-18 13:38:05:385 info: ::1 - - [18/May/2025:12:38:05 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:38:29:3829 info: Starting SAML authentication flow 
+2025-05-18 13:38:29:3829 info: ::1 - - [18/May/2025:12:38:29 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:38:35:3835 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-18 13:38:36:3836 info: SAML authentication profile received: {
+  "nameID": "test7@g.com",
+  "email": "test7@g.com"
+}
+2025-05-18 13:38:36:3836 info: Processing authenticated SAML user: {
+  "id": "test7@g.com",
+  "email": "test7@g.com"
+}
+2025-05-18 13:38:36:3836 info: Processing SAML authentication for user test7@g.com 
+2025-05-18 13:38:36:3836 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test7@g.com",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "test7@g.com",
+    "firstName": "test7@g.com",
+    "lastName": "test7@g.com",
+    "displayName": "test7@g.com test7@g.com",
+    "roles": []
+  },
+  "email": "test7@g.com",
+  "firstName": "test7@g.com",
+  "lastName": "test7@g.com",
+  "displayName": "test7@g.com test7@g.com",
+  "roles": [],
+  "authTime": "2025-05-18T12:38:36.067Z"
+}
+2025-05-18 13:38:36:3836 info: Looking up identity mapping for traditionalId: test7@g.com, providers: saml 
+2025-05-18 13:38:36:3836 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:38:36:3836 warn: Found mapping by traditionalId, but provider "saml" is unrelated to existing providers: email 
+2025-05-18 13:38:36:3836 info: Added provider "saml" to existing mapping for test7@g.com 
+2025-05-18 13:38:36:3836 info: SAML authentication processed for user test7@g.com, migration phase: traditional 
+2025-05-18 13:38:36:3836 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test7@g.com",
+  "email": "test7@g.com",
+  "duration": "117.03ms",
+  "migrationPhase": "traditional",
+  "hasDid": false,
+  "walletConnected": false
+}
+2025-05-18 13:38:36:3836 info: ::1 - - [18/May/2025:12:38:36 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 600 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:38:36:3836 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:38:36:3836 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:38:36:3836 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:38:36:3836 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "72.76ms",
+  "foundByDid": true
+}
+2025-05-18 13:38:36:3836 info: ::1 - - [18/May/2025:12:38:36 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:18:3918 info: Creating DID for user test7@g.com with method: sui {
+  "hasDid": true,
+  "hasDidDocument": true,
+  "hasWalletAddress": true,
+  "isRegisteredOnChain": true,
+  "provider": "protocol-bridge-saml"
+}
+2025-05-18 13:39:18:3918 info: [DID Service] Starting DID creation process for user test7@g.com with method sui 
+2025-05-18 13:39:18:3918 info: [DID Service] Using pre-created DID did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 for user test7@g.com 
+2025-05-18 13:39:18:3918 info: [DID Service] DID did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 is registered on blockchain with transaction: Hup2WaW46PQL1TBHoPqfTmcAkzoHMzwJwQvqNNUsJioY 
+2025-05-18 13:39:18:3918 info: [DID Service] Blockchain registration details: {
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "transactionDigest": "Hup2WaW46PQL1TBHoPqfTmcAkzoHMzwJwQvqNNUsJioY",
+  "walletAddress": "0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1"
+}
+2025-05-18 13:39:18:3918 info: [DID Service] Successfully associated pre-created DID did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 with user test7@g.com 
+2025-05-18 13:39:18:3918 info: [DID Service] DID creation process completed in 0.41ms {
+  "userId": "test7@g.com",
+  "method": "sui",
+  "duration": 0.410804,
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "type": "pre_created",
+  "isRegisteredOnChain": true
+}
+2025-05-18 13:39:18:3918 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:18:3918 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:18:3918 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:18:3918 info: Added DID did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 to identity mapping for user test7@g.com 
+2025-05-18 13:39:18:3918 info: DID creation completed {
+  "userId": "test7@g.com",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "138.81ms",
+  "migrationPhase": "preparation"
+}
+2025-05-18 13:39:18:3918 info: ::1 - - [18/May/2025:12:39:18 +0000] "POST /api/did HTTP/1.1" 200 1473 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:18:3918 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:18:3918 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:18:3918 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:18:3918 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "68.58ms",
+  "foundByDid": false
+}
+2025-05-18 13:39:18:3918 info: ::1 - - [18/May/2025:12:39:18 +0000] "GET /api/auth/user HTTP/1.1" 200 230 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:28:3928 info: [Protocol Bridge] Starting wallet connection process for user test7@g.com 
+2025-05-18 13:39:28:3928 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:28:3928 info: [Protocol Bridge] Starting wallet connection process for user test7@g.com 
+2025-05-18 13:39:28:3928 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:28:3928 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:28:3928 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:28:3928 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:28:3928 info: [Protocol Bridge] Using existing DID did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 for user test7@g.com 
+2025-05-18 13:39:28:3928 info: [Protocol Bridge] Creating wallet connection invitation for user test7@g.com 
+2025-05-18 13:39:28:3928 info: Creating connection invitation for user test7@g.com 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Using existing DID did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 for user test7@g.com 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Creating wallet connection invitation for user test7@g.com 
+2025-05-18 13:39:29:3929 info: Creating connection invitation for user test7@g.com 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Created wallet connection invitation with ID c42824d4-f1d3-45e8-bedb-82ee7e4fa089 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Created wallet connection invitation with ID 19d2e783-0c58-4178-9731-9725c6a18ab0 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: Connected wallet for user test7@g.com with connection ID c42824d4-f1d3-45e8-bedb-82ee7e4fa089 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Updated identity mapping with wallet connection ID c42824d4-f1d3-45e8-bedb-82ee7e4fa089 
+2025-05-18 13:39:29:3929 info: Updating mapping for traditionalId: test7@g.com, provider(s): protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: Connected wallet for user test7@g.com with connection ID 19d2e783-0c58-4178-9731-9725c6a18ab0 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 19d2e783-0c58-4178-9731-9725c6a18ab0 
+2025-05-18 13:39:29:3929 info: Updating mapping for traditionalId: test7@g.com, provider(s): protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: Updated identity mapping for traditionalId test7@g.com 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test7@g.com 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Successfully completed wallet connection process for user test7@g.com {
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "connectionId": "c42824d4-f1d3-45e8-bedb-82ee7e4fa089",
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:39:29:3929 info: Wallet connection initiated {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "340.29ms",
+  "connectionId": "c42824d4-f1d3-45e8-bedb-82ee7e4fa089"
+}
+2025-05-18 13:39:29:3929 info: ::1 - - [18/May/2025:12:39:29 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1460 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: Updated identity mapping for traditionalId test7@g.com 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test7@g.com 
+2025-05-18 13:39:29:3929 info: [Protocol Bridge] Successfully completed wallet connection process for user test7@g.com {
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "connectionId": "19d2e783-0c58-4178-9731-9725c6a18ab0",
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:39:29:3929 info: Wallet connection initiated {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "341.45ms",
+  "connectionId": "19d2e783-0c58-4178-9731-9725c6a18ab0"
+}
+2025-05-18 13:39:29:3929 info: ::1 - - [18/May/2025:12:39:29 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1460 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "66.38ms",
+  "foundByDid": false
+}
+2025-05-18 13:39:29:3929 info: ::1 - - [18/May/2025:12:39:29 +0000] "GET /api/auth/user HTTP/1.1" 200 224 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "67.80ms",
+  "foundByDid": false
+}
+2025-05-18 13:39:29:3929 info: ::1 - - [18/May/2025:12:39:29 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "68.26ms",
+  "foundByDid": false
+}
+2025-05-18 13:39:29:3929 info: ::1 - - [18/May/2025:12:39:29 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:29:3929 info: Looking up identity mapping for traditionalId: test7@g.com, providers: protocol-bridge-saml 
+2025-05-18 13:39:29:3929 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:39:29:3929 info: Found mapping by traditionalId with related provider 
+2025-05-18 13:39:29:3929 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "protocol-bridge-saml",
+  "duration": "67.45ms",
+  "foundByDid": false
+}
+2025-05-18 13:39:29:3929 info: ::1 - - [18/May/2025:12:39:29 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:39:47:3947 warn: Login attempt failed - invalid password {
+  "email": "test7@g.com"
+}
+2025-05-18 13:39:47:3947 info: ::1 - - [18/May/2025:12:39:47 +0000] "POST /api/auth/email HTTP/1.1" 401 37 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:00:400 info: Authentication completed {
+  "method": "email",
+  "userId": "test7@g.com",
+  "email": "test7@g.com",
+  "duration": "103.94ms",
+  "hasDid": true,
+  "migrationPhase": "hybrid"
+}
+2025-05-18 13:40:00:400 info: ::1 - - [18/May/2025:12:40:00 +0000] "POST /api/auth/email HTTP/1.1" 200 636 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:01:401 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-18 13:40:01:401 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 13:40:01:401 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "41.11ms",
+  "foundByDid": true
+}
+2025-05-18 13:40:01:401 info: ::1 - - [18/May/2025:12:40:01 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:01:401 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-18 13:40:01:401 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 13:40:01:401 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "38.59ms",
+  "foundByDid": true
+}
+2025-05-18 13:40:01:401 info: ::1 - - [18/May/2025:12:40:01 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:14:4014 info: ::1 - - [18/May/2025:12:40:14 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:14:4014 info: ::1 - - [18/May/2025:12:40:14 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:14:4014 info: ::1 - - [18/May/2025:12:40:14 +0000] "GET /api/credentials HTTP/1.1" 200 2 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:14:4014 info: ::1 - - [18/May/2025:12:40:14 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:21:4021 info: Issuing IdentityCredential credential for user test7@g.com 
+2025-05-18 13:40:21:4021 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-18 13:40:21:4021 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 13:40:21:4021 info: Creating IdentityCredential credential for subject did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 
+2025-05-18 13:40:21:4021 info: Credential issued and stored for user test7@g.com 
+2025-05-18 13:40:21:4021 info: Credential issuance initiated {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "credentialType": "IdentityCredential",
+  "duration": "79.89ms"
+}
+2025-05-18 13:40:21:4021 info: ::1 - - [18/May/2025:12:40:21 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1218 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:40:21:4021 info: ::1 - - [18/May/2025:12:40:21 +0000] "GET /api/credentials HTTP/1.1" 200 1122 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:42:32:4232 info: Issuing EmailCredential credential for user test7@g.com 
+2025-05-18 13:42:32:4232 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-18 13:42:32:4232 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 13:42:32:4232 info: Creating EmailCredential credential for subject did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1 
+2025-05-18 13:42:33:4233 info: Credential issued and stored for user test7@g.com 
+2025-05-18 13:42:33:4233 info: Credential issuance initiated {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "credentialType": "EmailCredential",
+  "duration": "341.55ms"
+}
+2025-05-18 13:42:33:4233 info: ::1 - - [18/May/2025:12:42:33 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1268 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:42:33:4233 info: ::1 - - [18/May/2025:12:42:33 +0000] "GET /api/credentials HTTP/1.1" 200 2296 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:42:47:4247 info: Processing VC authentication {
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "issuer": "did:example:ffaefc41-841c-4c61-b5c3-81d8c930f5f4",
+  "email": "test7@g.com"
+}
+2025-05-18 13:42:47:4247 info: Found existing user mapping {
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "traditionalId": "test7@g.com",
+  "email": "test7@g.com"
+}
+2025-05-18 13:42:47:4247 info: VC authentication completed - existing user {
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "email": "test7@g.com",
+  "duration": "35.80ms",
+  "migrationPhase": "hybrid",
+  "walletConnected": true,
+  "isFirstLogin": false,
+  "transitionToFullSSI": false
+}
+2025-05-18 13:42:47:4247 info: ::1 - - [18/May/2025:12:42:47 +0000] "POST /api/bridge/roundtrip HTTP/1.1" 200 723 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:42:47:4247 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 13:42:47:4247 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-18 13:42:47:4247 warn: Found mapping by traditionalId, but provider "vc" is unrelated to existing providers: email, saml 
+2025-05-18 13:42:47:4247 info: Added provider "vc" to existing mapping for test7@g.com 
+2025-05-18 13:42:47:4247 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "104.61ms",
+  "foundByDid": true
+}
+2025-05-18 13:42:47:4247 info: ::1 - - [18/May/2025:12:42:47 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:44:31:4431 info: ::1 - - [18/May/2025:12:44:31 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:44:31:4431 info: ::1 - - [18/May/2025:12:44:31 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:44:31:4431 info: ::1 - - [18/May/2025:12:44:31 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 13:44:31:4431 info: ::1 - - [18/May/2025:12:44:31 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:05:55:555 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 15:05:56:556 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 15:05:56:556 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "916.65ms",
+  "foundByDid": true
+}
+2025-05-18 15:05:56:556 info: ::1 - - [18/May/2025:14:05:56 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:05:56:556 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 15:05:56:556 info: ::1 - - [18/May/2025:14:05:56 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:05:56:556 info: ::1 - - [18/May/2025:14:05:56 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:05:56:556 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 15:05:56:556 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "176.12ms",
+  "foundByDid": true
+}
+2025-05-18 15:05:56:556 info: ::1 - - [18/May/2025:14:05:56 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:05:56:556 info: ::1 - - [18/May/2025:14:05:56 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:05:56:556 info: ::1 - - [18/May/2025:14:05:56 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:47:48:4748 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 15:47:49:4749 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 15:47:49:4749 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "1203.23ms",
+  "foundByDid": true
+}
+2025-05-18 15:47:49:4749 info: ::1 - - [18/May/2025:14:47:49 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:47:49:4749 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 15:47:49:4749 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 15:47:49:4749 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "41.29ms",
+  "foundByDid": true
+}
+2025-05-18 15:47:49:4749 info: ::1 - - [18/May/2025:14:47:49 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:47:50:4750 info: ::1 - - [18/May/2025:14:47:50 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:47:50:4750 info: ::1 - - [18/May/2025:14:47:50 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:47:50:4750 info: ::1 - - [18/May/2025:14:47:50 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 15:47:50:4750 info: ::1 - - [18/May/2025:14:47:50 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 16:59:43:5943 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 16:59:44:5944 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 16:59:44:5944 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "987.30ms",
+  "foundByDid": true
+}
+2025-05-18 16:59:44:5944 info: ::1 - - [18/May/2025:15:59:44 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 16:59:44:5944 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 16:59:45:5945 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 16:59:45:5945 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "169.22ms",
+  "foundByDid": true
+}
+2025-05-18 16:59:45:5945 info: ::1 - - [18/May/2025:15:59:45 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 16:59:45:5945 info: ::1 - - [18/May/2025:15:59:45 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 16:59:45:5945 info: ::1 - - [18/May/2025:15:59:45 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 16:59:45:5945 info: ::1 - - [18/May/2025:15:59:45 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 16:59:45:5945 info: ::1 - - [18/May/2025:15:59:45 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:02:43:243 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 17:02:43:243 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 17:02:43:243 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "134.06ms",
+  "foundByDid": true
+}
+2025-05-18 17:02:43:243 info: ::1 - - [18/May/2025:16:02:43 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:02:43:243 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 17:02:43:243 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 17:02:43:243 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "35.62ms",
+  "foundByDid": true
+}
+2025-05-18 17:02:43:243 info: ::1 - - [18/May/2025:16:02:43 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:02:44:244 info: ::1 - - [18/May/2025:16:02:44 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:02:44:244 info: ::1 - - [18/May/2025:16:02:44 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:02:44:244 info: ::1 - - [18/May/2025:16:02:44 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:02:44:244 info: ::1 - - [18/May/2025:16:02:44 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:19:35:1935 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 17:19:35:1935 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 17:19:35:1935 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "122.51ms",
+  "foundByDid": true
+}
+2025-05-18 17:19:35:1935 info: ::1 - - [18/May/2025:16:19:35 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:19:35:1935 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 17:19:36:1936 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 17:19:36:1936 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "142.02ms",
+  "foundByDid": true
+}
+2025-05-18 17:19:36:1936 info: ::1 - - [18/May/2025:16:19:36 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:19:36:1936 info: ::1 - - [18/May/2025:16:19:36 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:19:36:1936 info: ::1 - - [18/May/2025:16:19:36 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:19:36:1936 info: ::1 - - [18/May/2025:16:19:36 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 17:19:36:1936 info: ::1 - - [18/May/2025:16:19:36 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 23:12:34:1234 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 23:12:35:1235 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 23:12:35:1235 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "1064.18ms",
+  "foundByDid": true
+}
+2025-05-18 23:12:35:1235 info: ::1 - - [18/May/2025:22:12:35 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 23:12:35:1235 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-18 23:12:36:1236 info: ::1 - - [18/May/2025:22:12:36 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 23:12:36:1236 info: ::1 - - [18/May/2025:22:12:36 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 23:12:36:1236 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-18 23:12:36:1236 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "168.82ms",
+  "foundByDid": true
+}
+2025-05-18 23:12:36:1236 info: ::1 - - [18/May/2025:22:12:36 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 23:12:36:1236 info: ::1 - - [18/May/2025:22:12:36 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-18 23:12:36:1236 info: ::1 - - [18/May/2025:22:12:36 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:06:58:658 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 08:06:59:659 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 08:06:59:659 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "976.07ms",
+  "foundByDid": true
+}
+2025-05-19 08:06:59:659 info: ::1 - - [19/May/2025:07:06:59 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:06:59:659 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 08:07:00:70 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 08:07:00:70 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "168.46ms",
+  "foundByDid": true
+}
+2025-05-19 08:07:00:70 info: ::1 - - [19/May/2025:07:07:00 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:07:00:70 info: ::1 - - [19/May/2025:07:07:00 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:07:00:70 info: ::1 - - [19/May/2025:07:07:00 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:07:00:70 info: ::1 - - [19/May/2025:07:07:00 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:07:00:70 info: ::1 - - [19/May/2025:07:07:00 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:58:43:5843 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 08:58:43:5843 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 08:58:43:5843 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "1037.47ms",
+  "foundByDid": true
+}
+2025-05-19 08:58:44:5844 info: ::1 - - [19/May/2025:07:58:43 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:58:44:5844 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 08:58:44:5844 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 08:58:44:5844 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "39.46ms",
+  "foundByDid": true
+}
+2025-05-19 08:58:44:5844 info: ::1 - - [19/May/2025:07:58:44 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:58:44:5844 info: ::1 - - [19/May/2025:07:58:44 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:58:44:5844 info: ::1 - - [19/May/2025:07:58:44 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:58:44:5844 info: ::1 - - [19/May/2025:07:58:44 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 08:58:44:5844 info: ::1 - - [19/May/2025:07:58:44 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:30:46:3046 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 09:30:46:3046 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 09:30:46:3046 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "186.94ms",
+  "foundByDid": true
+}
+2025-05-19 09:30:46:3046 info: ::1 - - [19/May/2025:08:30:46 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:30:46:3046 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 09:30:47:3047 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 09:30:47:3047 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "217.60ms",
+  "foundByDid": true
+}
+2025-05-19 09:30:47:3047 info: ::1 - - [19/May/2025:08:30:47 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:30:47:3047 info: ::1 - - [19/May/2025:08:30:47 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:30:47:3047 info: ::1 - - [19/May/2025:08:30:47 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:30:47:3047 info: ::1 - - [19/May/2025:08:30:47 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:30:47:3047 info: ::1 - - [19/May/2025:08:30:47 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:33:21:3321 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 09:33:23:3323 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 09:33:23:3323 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "2221.54ms",
+  "foundByDid": true
+}
+2025-05-19 09:33:23:3323 info: ::1 - - [19/May/2025:08:33:23 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:33:23:3323 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 09:33:23:3323 info: ::1 - - [19/May/2025:08:33:23 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:33:23:3323 info: ::1 - - [19/May/2025:08:33:23 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:33:23:3323 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 09:33:23:3323 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "134.85ms",
+  "foundByDid": true
+}
+2025-05-19 09:33:23:3323 info: ::1 - - [19/May/2025:08:33:23 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:33:24:3324 info: ::1 - - [19/May/2025:08:33:24 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:33:24:3324 info: ::1 - - [19/May/2025:08:33:24 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:53:03:533 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 09:53:03:533 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 09:53:03:533 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "314.89ms",
+  "foundByDid": true
+}
+2025-05-19 09:53:03:533 info: ::1 - - [19/May/2025:08:53:03 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:53:03:533 info: Looking up identity mapping for traditionalId: test7@g.com, providers: vc 
+2025-05-19 09:53:03:533 info: ::1 - - [19/May/2025:08:53:03 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:53:03:533 info: ::1 - - [19/May/2025:08:53:03 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:53:03:533 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 09:53:03:533 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "vc",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "322.65ms",
+  "foundByDid": true
+}
+2025-05-19 09:53:03:533 info: ::1 - - [19/May/2025:08:53:03 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:53:03:533 info: ::1 - - [19/May/2025:08:53:03 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:53:04:534 info: ::1 - - [19/May/2025:08:53:04 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 09:58:51:5851 info: Starting SAML authentication flow 
+2025-05-19 09:58:51:5851 info: ::1 - - [19/May/2025:08:58:51 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:19:319 info: Authentication completed {
+  "method": "email",
+  "userId": "test7@g.com",
+  "email": "test7@g.com",
+  "duration": "2084.65ms",
+  "hasDid": true,
+  "migrationPhase": "hybrid"
+}
+2025-05-19 10:03:19:319 info: ::1 - - [19/May/2025:09:03:19 +0000] "POST /api/auth/email HTTP/1.1" 200 636 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:20:320 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 10:03:20:320 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 10:03:20:320 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "60.55ms",
+  "foundByDid": true
+}
+2025-05-19 10:03:20:320 info: ::1 - - [19/May/2025:09:03:20 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:20:320 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 10:03:20:320 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 10:03:20:320 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "208.19ms",
+  "foundByDid": true
+}
+2025-05-19 10:03:20:320 info: ::1 - - [19/May/2025:09:03:20 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:23:323 info: ::1 - - [19/May/2025:09:03:23 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:23:323 info: ::1 - - [19/May/2025:09:03:23 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:23:323 info: ::1 - - [19/May/2025:09:03:23 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 10:03:23:323 info: ::1 - - [19/May/2025:09:03:23 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:20:41:2041 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:20:41:2041 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:20:41:2041 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "720.19ms",
+  "foundByDid": true
+}
+2025-05-19 14:20:41:2041 info: ::1 - - [19/May/2025:13:20:41 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:20:41:2041 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:20:41:2041 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:20:41:2041 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "89.25ms",
+  "foundByDid": true
+}
+2025-05-19 14:20:41:2041 info: ::1 - - [19/May/2025:13:20:41 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:20:45:2045 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:20:45:2045 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:20:45:2045 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "237.42ms",
+  "foundByDid": true
+}
+2025-05-19 14:20:45:2045 info: ::1 - - [19/May/2025:13:20:45 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:20:45:2045 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:20:45:2045 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:20:45:2045 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "178.67ms",
+  "foundByDid": true
+}
+2025-05-19 14:20:45:2045 info: ::1 - - [19/May/2025:13:20:45 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:36:41:3641 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:36:42:3642 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:36:42:3642 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "1467.69ms",
+  "foundByDid": true
+}
+2025-05-19 14:36:42:3642 info: ::1 - - [19/May/2025:13:36:42 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:36:42:3642 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:36:42:3642 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:36:42:3642 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "125.29ms",
+  "foundByDid": true
+}
+2025-05-19 14:36:42:3642 info: ::1 - - [19/May/2025:13:36:42 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:37:08:378 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:37:08:378 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:37:08:378 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "219.36ms",
+  "foundByDid": true
+}
+2025-05-19 14:37:08:378 info: ::1 - - [19/May/2025:13:37:08 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 14:37:08:378 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 14:37:09:379 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 14:37:09:379 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "194.61ms",
+  "foundByDid": true
+}
+2025-05-19 14:37:09:379 info: ::1 - - [19/May/2025:13:37:09 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 22:01:03:13 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 22:01:04:14 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 22:01:04:14 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "883.54ms",
+  "foundByDid": true
+}
+2025-05-19 22:01:04:14 info: ::1 - - [19/May/2025:21:01:04 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 22:01:04:14 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 22:01:04:14 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 22:01:04:14 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "156.93ms",
+  "foundByDid": true
+}
+2025-05-19 22:01:04:14 info: ::1 - - [19/May/2025:21:01:04 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 22:14:52:1452 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 22:14:52:1452 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 22:14:52:1452 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "310.18ms",
+  "foundByDid": true
+}
+2025-05-19 22:14:52:1452 info: ::1 - - [19/May/2025:21:14:52 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-19 22:14:52:1452 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-19 22:14:52:1452 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-19 22:14:52:1452 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "39.43ms",
+  "foundByDid": true
+}
+2025-05-19 22:14:52:1452 info: ::1 - - [19/May/2025:21:14:52 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-20 07:06:21:621 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-20 07:06:22:622 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-20 07:06:22:622 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "910.84ms",
+  "foundByDid": true
+}
+2025-05-20 07:06:22:622 info: ::1 - - [20/May/2025:06:06:22 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-20 07:06:22:622 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-20 07:06:22:622 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-20 07:06:22:622 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "118.19ms",
+  "foundByDid": true
+}
+2025-05-20 07:06:22:622 info: ::1 - - [20/May/2025:06:06:22 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-20 08:46:12:4612 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-20 08:46:13:4613 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-20 08:46:13:4613 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "831.15ms",
+  "foundByDid": true
+}
+2025-05-20 08:46:13:4613 info: ::1 - - [20/May/2025:07:46:13 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-20 08:46:13:4613 info: Looking up identity mapping for traditionalId: test7@g.com, providers: email 
+2025-05-20 08:46:13:4613 info: Found identity mapping by exact match for user test7@g.com 
+2025-05-20 08:46:13:4613 info: User info retrieved {
+  "userId": "test7@g.com",
+  "provider": "email",
+  "did": "did:sui:0x192243075a5ea1ad0ed9b27085f7cd81d3c79268d817c6430aa3a2d299f15af1",
+  "duration": "37.61ms",
+  "foundByDid": true
+}
+2025-05-20 08:46:13:4613 info: ::1 - - [20/May/2025:07:46:13 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:34:27:3427 info: Logger initialized successfully {
+  "environment": "development",
+  "logLevel": "debug"
+}
+2025-05-27 23:34:27:3427 info: Environment variables loaded: {
+  "DID_REGISTRY_ISSUER_DID": "did:example:ffaefc41-841c-4c61-b5c3-81d8c930f5f4",
+  "ISSUER_PRIVATE_KEY": "Set",
+  "MONGODB_URI": "Set",
+  "NODE_ENV": "development",
+  "KEYCLOAK_URL": "http://localhost:8080",
+  "KEYCLOAK_REALM": "test_proj",
+  "SAML_ENTRY_POINT": "http://localhost:8080/realms/test_proj/protocol/saml",
+  "SAML_CALLBACK_URL": "http://localhost:5001/api/auth/saml/callback",
+  "SAML_ISSUER": "protocol-bridge-saml"
+}
+2025-05-27 23:34:28:3428 info: Wallet connector initialized {
+  "baseUrl": "http://localhost:5002",
+  "hasApiKey": false,
+  "timeout": 30000,
+  "retryAttempts": 3,
+  "retryDelay": 1000
+}
+2025-05-27 23:34:28:3428 info: Wallet service is disabled - using direct credential verification 
+2025-05-27 23:34:28:3428 info: Protocol bridge methods loaded: {
+  "0": "performanceTrackingEnabled",
+  "1": "walletEnabled"
+}
+2025-05-27 23:34:28:3428 info: Initializing SAML strategy... 
+2025-05-27 23:34:28:3428 info: Successfully loaded SP certificate from file 
+2025-05-27 23:34:28:3428 info: Successfully loaded SP private key from file 
+2025-05-27 23:34:28:3428 info: Successfully loaded IdP certificate from file 
+2025-05-27 23:34:28:3428 info: Configuring SAML Strategy with: {
+  "callbackUrl": "http://localhost:5001/api/auth/saml/callback",
+  "entryPoint": "http://localhost:8080/realms/test_proj/protocol/saml",
+  "issuer": "protocol-bridge-saml",
+  "hasCert": true,
+  "hasPrivateKey": true,
+  "hasIdpCert": true
+}
+2025-05-27 23:34:28:3428 info: Final SAML configuration prepared with options: {
+  "callbackUrl": "http://localhost:5001/api/auth/saml/callback",
+  "entryPoint": "http://localhost:8080/realms/test_proj/protocol/saml",
+  "issuer": "protocol-bridge-saml",
+  "hasCert": true,
+  "hasPrivateKey": true,
+  "signatureAlgorithm": "sha256",
+  "wantAssertionsSigned": false,
+  "validateInResponseTo": false,
+  "authnRequestsSigned": true
+}
+2025-05-27 23:34:28:3428 info: SAML strategy configured successfully 
+2025-05-27 23:34:28:3428 info: SAML strategy initialized successfully 
+2025-05-27 23:34:28:3428 info: SAML strategy initialized successfully 
+2025-05-27 23:34:28:3428 info: Running in development mode - API only (not serving static files) 
+2025-05-27 23:34:28:3428 info: Server running on port 5001 in development mode 
+2025-05-27 23:34:28:3428 info: API available at http://localhost:5001/api 
+2025-05-27 23:34:28:3428 info: SAML callback URL is http://localhost:5001/api/auth/saml/callback 
+2025-05-27 23:34:28:3428 info: CORS origin set to http://localhost:5173 
+2025-05-27 23:34:29:3429 info: MongoDB connected successfully 
+2025-05-27 23:37:15:3715 info: Created identity mapping for traditionalId testuser@gmail.com with provider(s) email 
+2025-05-27 23:37:15:3715 info: User registration completed {
+  "method": "email",
+  "userId": "testuser@gmail.com",
+  "email": "testuser@gmail.com",
+  "duration": "289.95ms"
+}
+2025-05-27 23:37:15:3715 info: ::1 - - [27/May/2025:22:37:15 +0000] "POST /api/auth/email/register HTTP/1.1" 201 176 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:37:22:3722 info: Authentication completed {
+  "method": "email",
+  "userId": "testuser@gmail.com",
+  "email": "testuser@gmail.com",
+  "duration": "132.04ms",
+  "hasDid": false,
+  "migrationPhase": "traditional"
+}
+2025-05-27 23:37:22:3722 info: ::1 - - [27/May/2025:22:37:22 +0000] "POST /api/auth/email HTTP/1.1" 200 559 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:37:23:3723 info: Looking up identity mapping for traditionalId: testuser@gmail.com, providers: email 
+2025-05-27 23:37:23:3723 info: Found identity mapping by exact match for user testuser@gmail.com 
+2025-05-27 23:37:23:3723 info: User info retrieved {
+  "userId": "testuser@gmail.com",
+  "provider": "email",
+  "duration": "59.97ms",
+  "foundByDid": true
+}
+2025-05-27 23:37:23:3723 info: ::1 - - [27/May/2025:22:37:23 +0000] "GET /api/auth/user HTTP/1.1" 200 155 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:37:23:3723 info: Looking up identity mapping for traditionalId: testuser@gmail.com, providers: email 
+2025-05-27 23:37:23:3723 info: Found identity mapping by exact match for user testuser@gmail.com 
+2025-05-27 23:37:23:3723 info: User info retrieved {
+  "userId": "testuser@gmail.com",
+  "provider": "email",
+  "duration": "44.14ms",
+  "foundByDid": true
+}
+2025-05-27 23:37:23:3723 info: ::1 - - [27/May/2025:22:37:23 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:37:51:3751 info: Starting SAML authentication flow 
+2025-05-27 23:37:51:3751 info: ::1 - - [27/May/2025:22:37:51 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:39:18:3918 info: Starting SAML authentication flow 
+2025-05-27 23:39:18:3918 info: ::1 - - [27/May/2025:22:39:18 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:39:29:3929 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-27 23:39:29:3929 info: SAML authentication profile received: {
+  "nameID": "test",
+  "email": "testuser@gmail.com"
+}
+2025-05-27 23:39:29:3929 info: Processing authenticated SAML user: {
+  "id": "test",
+  "email": "testuser@gmail.com"
+}
+2025-05-27 23:39:29:3929 info: Processing SAML authentication for user test 
+2025-05-27 23:39:29:3929 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "testuser@gmail.com",
+    "firstName": "test",
+    "lastName": "test",
+    "displayName": "test test",
+    "roles": []
+  },
+  "email": "testuser@gmail.com",
+  "firstName": "test",
+  "lastName": "test",
+  "displayName": "test test",
+  "roles": [],
+  "authTime": "2025-05-27T22:39:29.911Z"
+}
+2025-05-27 23:39:29:3929 info: Looking up identity mapping for traditionalId: test, providers: saml 
+2025-05-27 23:39:30:3930 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-27 23:39:30:3930 info: No identity mapping found for traditionalId: test 
+2025-05-27 23:39:30:3930 info: Added provider saml to existing mapping found by email testuser@gmail.com 
+2025-05-27 23:39:30:3930 info: SAML authentication processed for user test, migration phase: traditional 
+2025-05-27 23:39:30:3930 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test",
+  "email": "testuser@gmail.com",
+  "duration": "670.29ms",
+  "migrationPhase": "traditional",
+  "hasDid": false,
+  "walletConnected": false
+}
+2025-05-27 23:39:30:3930 info: ::1 - - [27/May/2025:22:39:30 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 581 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:39:31:3931 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:39:31:3931 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-27 23:39:31:3931 info: No identity mapping found for traditionalId: test 
+2025-05-27 23:39:31:3931 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "204.38ms",
+  "foundByDid": false
+}
+2025-05-27 23:39:31:3931 info: ::1 - - [27/May/2025:22:39:31 +0000] "GET /api/auth/user HTTP/1.1" 200 127 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:24:4124 info: Creating DID for user test with method: sui {
+  "hasDid": true,
+  "hasDidDocument": true,
+  "hasWalletAddress": true,
+  "isRegisteredOnChain": true,
+  "provider": "protocol-bridge-saml"
+}
+2025-05-27 23:41:24:4124 info: [DID Service] Starting DID creation process for user test with method sui 
+2025-05-27 23:41:24:4124 info: [DID Service] Using pre-created DID did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 for user test 
+2025-05-27 23:41:24:4124 info: [DID Service] DID did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 is registered on blockchain with transaction: H6CLkXwJE9oC8MkfqUyjV2sGmFSAZ5VexwRPTRMjCaEM 
+2025-05-27 23:41:24:4124 info: [DID Service] Blockchain registration details: {
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "transactionDigest": "H6CLkXwJE9oC8MkfqUyjV2sGmFSAZ5VexwRPTRMjCaEM",
+  "walletAddress": "0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2"
+}
+2025-05-27 23:41:24:4124 info: [DID Service] Successfully associated pre-created DID did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 with user test 
+2025-05-27 23:41:24:4124 info: [DID Service] DID creation process completed in 0.90ms {
+  "userId": "test",
+  "method": "sui",
+  "duration": 0.904162,
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "type": "pre_created",
+  "isRegisteredOnChain": true
+}
+2025-05-27 23:41:24:4124 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:24:4124 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-27 23:41:24:4124 info: No identity mapping found for traditionalId: test 
+2025-05-27 23:41:24:4124 info: No identity mapping found for user test, creating a new one 
+2025-05-27 23:41:24:4124 info: Created identity mapping for traditionalId test with provider(s) protocol-bridge-saml 
+2025-05-27 23:41:24:4124 info: Created new identity mapping for user test 
+2025-05-27 23:41:24:4124 info: Added DID did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 to identity mapping for user test 
+2025-05-27 23:41:24:4124 info: DID creation completed {
+  "userId": "test",
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "duration": "312.89ms",
+  "migrationPhase": "preparation"
+}
+2025-05-27 23:41:24:4124 info: ::1 - - [27/May/2025:22:41:24 +0000] "POST /api/did HTTP/1.1" 200 1422 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:24:4124 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:24:4124 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:24:4124 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "36.82ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:24:4124 info: ::1 - - [27/May/2025:22:41:24 +0000] "GET /api/auth/user HTTP/1.1" 200 208 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Starting wallet connection process for user test 
+2025-05-27 23:41:37:4137 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Starting wallet connection process for user test 
+2025-05-27 23:41:37:4137 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Using existing DID did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 for user test 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Creating wallet connection invitation for user test 
+2025-05-27 23:41:37:4137 info: Creating connection invitation for user test 
+2025-05-27 23:41:37:4137 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Using existing DID did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 for user test 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Creating wallet connection invitation for user test 
+2025-05-27 23:41:37:4137 info: Creating connection invitation for user test 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Created wallet connection invitation with ID 0f257dc0-7af5-4ce9-94ea-a02f4f73a766 
+2025-05-27 23:41:37:4137 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Created wallet connection invitation with ID 0def6568-e7ff-417d-beee-2bfad3df60dc 
+2025-05-27 23:41:37:4137 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:37:4137 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:37:4137 info: Connected wallet for user test with connection ID 0f257dc0-7af5-4ce9-94ea-a02f4f73a766 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 0f257dc0-7af5-4ce9-94ea-a02f4f73a766 
+2025-05-27 23:41:37:4137 info: Updating mapping for traditionalId: test, provider(s): protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: Connected wallet for user test with connection ID 0def6568-e7ff-417d-beee-2bfad3df60dc 
+2025-05-27 23:41:37:4137 info: [Protocol Bridge] Updated identity mapping with wallet connection ID 0def6568-e7ff-417d-beee-2bfad3df60dc 
+2025-05-27 23:41:37:4137 info: Updating mapping for traditionalId: test, provider(s): protocol-bridge-saml 
+2025-05-27 23:41:37:4137 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:38:4138 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:38:4138 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:38:4138 info: Updated identity mapping for traditionalId test 
+2025-05-27 23:41:38:4138 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test 
+2025-05-27 23:41:38:4138 info: [Protocol Bridge] Successfully completed wallet connection process for user test {
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "connectionId": "0f257dc0-7af5-4ce9-94ea-a02f4f73a766",
+  "migrationPhase": "hybrid"
+}
+2025-05-27 23:41:38:4138 info: Wallet connection initiated {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "253.91ms",
+  "connectionId": "0f257dc0-7af5-4ce9-94ea-a02f4f73a766"
+}
+2025-05-27 23:41:38:4138 info: ::1 - - [27/May/2025:22:41:38 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1475 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:38:4138 info: Updated identity mapping for traditionalId test 
+2025-05-27 23:41:38:4138 info: [Protocol Bridge] Updated migration phase to 'hybrid' for user test 
+2025-05-27 23:41:38:4138 info: [Protocol Bridge] Successfully completed wallet connection process for user test {
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "connectionId": "0def6568-e7ff-417d-beee-2bfad3df60dc",
+  "migrationPhase": "hybrid"
+}
+2025-05-27 23:41:38:4138 info: Wallet connection initiated {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "263.99ms",
+  "connectionId": "0def6568-e7ff-417d-beee-2bfad3df60dc"
+}
+2025-05-27 23:41:38:4138 info: ::1 - - [27/May/2025:22:41:38 +0000] "POST /api/bridge/wallet/connect HTTP/1.1" 200 1475 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:38:4138 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:38:4138 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:38:4138 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "30.20ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:38:4138 info: ::1 - - [27/May/2025:22:41:38 +0000] "GET /api/auth/user HTTP/1.1" 200 202 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:38:4138 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:38:4138 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:38:4138 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "42.13ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:38:4138 info: ::1 - - [27/May/2025:22:41:38 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:38:4138 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:38:4138 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:38:4138 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "36.83ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:38:4138 info: ::1 - - [27/May/2025:22:41:38 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:38:4138 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:38:4138 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:38:4138 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "52.32ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:38:4138 info: ::1 - - [27/May/2025:22:41:38 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:41:4141 info: ::1 - - [27/May/2025:22:41:41 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:41:4141 info: ::1 - - [27/May/2025:22:41:41 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:41:4141 info: ::1 - - [27/May/2025:22:41:41 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:41:4141 info: ::1 - - [27/May/2025:22:41:41 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:46:4146 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:46:4146 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:46:4146 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "64.41ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:46:4146 info: ::1 - - [27/May/2025:22:41:46 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:46:4146 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:46:4146 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:46:4146 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "duration": "48.53ms",
+  "foundByDid": false
+}
+2025-05-27 23:41:46:4146 info: ::1 - - [27/May/2025:22:41:46 +0000] "GET /api/auth/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:47:4147 info: ::1 - - [27/May/2025:22:41:47 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:47:4147 info: ::1 - - [27/May/2025:22:41:47 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:47:4147 info: ::1 - - [27/May/2025:22:41:47 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:47:4147 info: ::1 - - [27/May/2025:22:41:47 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:51:4151 info: Issuing EmailCredential credential for user test 
+2025-05-27 23:41:51:4151 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:41:51:4151 info: Found identity mapping by exact match for user test 
+2025-05-27 23:41:51:4151 info: Creating EmailCredential credential for subject did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2 
+2025-05-27 23:41:51:4151 info: Credential issued and stored for user test 
+2025-05-27 23:41:51:4151 info: Credential issuance initiated {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "credentialType": "EmailCredential",
+  "duration": "108.66ms"
+}
+2025-05-27 23:41:51:4151 info: ::1 - - [27/May/2025:22:41:51 +0000] "POST /api/bridge/credentials/issue HTTP/1.1" 200 1240 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:51:4151 info: ::1 - - [27/May/2025:22:41:51 +0000] "GET /api/credentials HTTP/1.1" 403 63 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:57:4157 info: Starting SAML authentication flow 
+2025-05-27 23:41:57:4157 info: ::1 - - [27/May/2025:22:41:57 +0000] "GET /api/auth/saml HTTP/1.1" 302 0 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:41:58:4158 info: Received SAML callback with body keys: {
+  "0": "SAMLResponse"
+}
+2025-05-27 23:41:58:4158 info: SAML authentication profile received: {
+  "nameID": "test",
+  "email": "testuser@gmail.com"
+}
+2025-05-27 23:41:58:4158 info: Processing authenticated SAML user: {
+  "id": "test",
+  "email": "testuser@gmail.com"
+}
+2025-05-27 23:41:58:4158 info: Processing SAML authentication for user test 
+2025-05-27 23:41:58:4158 info: FIND OR CREATE MAPPING IS USED [l]:  {
+  "id": "test",
+  "authProtocol": "saml",
+  "authProvider": "protocol-bridge-saml",
+  "attributes": {
+    "email": "testuser@gmail.com",
+    "firstName": "test",
+    "lastName": "test",
+    "displayName": "test test",
+    "roles": []
+  },
+  "email": "testuser@gmail.com",
+  "firstName": "test",
+  "lastName": "test",
+  "displayName": "test test",
+  "roles": [],
+  "authTime": "2025-05-27T22:41:58.844Z"
+}
+2025-05-27 23:41:58:4158 info: Looking up identity mapping for traditionalId: test, providers: saml 
+2025-05-27 23:41:59:4159 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-27 23:41:59:4159 info: Found mapping by traditionalId with related provider 
+2025-05-27 23:41:59:4159 info: Updated provider list for user test 
+2025-05-27 23:41:59:4159 info: Updated user details for mapping test 
+2025-05-27 23:41:59:4159 info: SAML authentication processed for user test, migration phase: hybrid 
+2025-05-27 23:41:59:4159 info: Authentication completed successfully {
+  "method": "saml",
+  "userId": "test",
+  "email": "testuser@gmail.com",
+  "duration": "533.23ms",
+  "migrationPhase": "hybrid",
+  "hasDid": true,
+  "walletConnected": true
+}
+2025-05-27 23:41:59:4159 info: ::1 - - [27/May/2025:22:41:59 +0000] "POST /api/auth/saml/callback HTTP/1.1" 302 679 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:42:00:420 info: Looking up identity mapping for traditionalId: test, providers: protocol-bridge-saml 
+2025-05-27 23:42:00:420 info: Found identity mapping by exact match for user test 
+2025-05-27 23:42:00:420 info: User info retrieved {
+  "userId": "test",
+  "provider": "protocol-bridge-saml",
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "duration": "91.82ms",
+  "foundByDid": true
+}
+2025-05-27 23:42:00:420 info: ::1 - - [27/May/2025:22:42:00 +0000] "GET /api/auth/user HTTP/1.1" 200 204 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:44:42:4442 info: ::1 - - [27/May/2025:22:44:42 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:44:42:4442 info: ::1 - - [27/May/2025:22:44:42 +0000] "GET /api/credentials/schemas HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:44:42:4442 info: ::1 - - [27/May/2025:22:44:42 +0000] "GET /api/credentials HTTP/1.1" 200 1147 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:44:42:4442 info: ::1 - - [27/May/2025:22:44:42 +0000] "GET /api/credentials HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:45:37:4537 info: Processing VC authentication {
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "issuer": "did:example:ffaefc41-841c-4c61-b5c3-81d8c930f5f4",
+  "email": "test@example.com"
+}
+2025-05-27 23:45:37:4537 info: Found existing user mapping {
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "traditionalId": "test",
+  "email": "testuser@gmail.com"
+}
+2025-05-27 23:45:37:4537 info: VC authentication completed - existing user {
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "email": "testuser@gmail.com",
+  "duration": "93.98ms",
+  "migrationPhase": "hybrid",
+  "walletConnected": true,
+  "isFirstLogin": false,
+  "transitionToFullSSI": false
+}
+2025-05-27 23:45:37:4537 info: ::1 - - [27/May/2025:22:45:37 +0000] "POST /api/bridge/roundtrip HTTP/1.1" 200 639 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
+2025-05-27 23:45:37:4537 info: Looking up identity mapping for traditionalId: test, providers: vc 
+2025-05-27 23:45:37:4537 info: No exact match found, trying fallback lookup by traditionalId only 
+2025-05-27 23:45:37:4537 warn: Found mapping by traditionalId, but provider "vc" is unrelated to existing providers: protocol-bridge-saml, saml 
+2025-05-27 23:45:37:4537 info: Added provider "vc" to existing mapping for test 
+2025-05-27 23:45:37:4537 info: User info retrieved {
+  "userId": "test",
+  "provider": "vc",
+  "did": "did:sui:0xd97cd593fc981c35e0f711f5d6c44710f1e9692bfb2dc6e039fff9b9ed9ff6e2",
+  "duration": "226.07ms",
+  "foundByDid": true
+}
+2025-05-27 23:45:37:4537 info: ::1 - - [27/May/2025:22:45:37 +0000] "GET /api/auth/user HTTP/1.1" 200 185 "http://localhost:5173/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" 
